@@ -1,0 +1,16 @@
+{% macro comment (comment) %}
+    <div class="card-comment">
+        <!-- User image -->
+        <img alt="User Image" class="img-circle img-sm" src="{{ comment.account.avatar }}">
+
+        <div class="comment-text">
+                    <span class="username">
+                      {{ comment.account.getFullName }}
+                      <span class="text-muted float-right">{{ comment.createdAt|ago }}</span>
+                    </span><!-- /.username -->
+            {{ comment.commentText }}
+        </div>
+        <!-- /.comment-text -->
+    </div>
+    <!-- /.card-comment -->
+{% endmacro %}
